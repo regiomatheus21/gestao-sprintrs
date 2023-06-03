@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.UUID;
 
 @Repository
 @Log4j2
@@ -30,11 +31,22 @@ public class SprinterInfraRepository implements SprinterRepository {
         log.info("[inicia] SprinterInfraRepository- salva");
         return sprinter;
     }
+
+
+
     @Override
     public List<Sprinter> buscaTodosSprinters() {
         log.info("[inicia] SprinterInfraRepository - buscaTodosSprinters");
         List<Sprinter> todosSprinter = sprinterSpringDataJPARepository.findAll();
         log.info("[finaliza] SprinterInfraRepository - buscaTodosSprinters");
         return todosSprinter;
+    }
+    @Override
+    public Sprinter buscaSprinterAtravesId(UUID idSprinter) {
+        log.info("[inicia] SprinterInfraRepository - buscaSprinterAtravesId");
+        Sprinter sprinter = sprinterSpringDataJPARepository.findByIdSprinter(idSprinter)
+                        .orElseThrow(() -> APIException.build(HttpStatus.NOT_FOUND,"Sprinter nao encontrado"));
+        log.info("[finaliza-] SprinterInfraRepository - buscaSprinterAtravesId");
+        return sprinter;
     }
 }

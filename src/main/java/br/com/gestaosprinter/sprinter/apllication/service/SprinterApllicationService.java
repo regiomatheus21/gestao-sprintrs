@@ -38,7 +38,8 @@ public class SprinterApllicationService implements sprinterService{
     @Override
     public SprinterDetalhadoResponse buscaSprinterAtravesId(UUID idSprinter) {
         log.info("[inicia] SprinterApllicationService - buscaSprinterAtravesId");
+        Sprinter sprinter = sprinterRepository.buscaSprinterAtravesId(idSprinter);
         log.info("[finaliza] SprinterApllicationService - buscaSprinterAtravesId");
-        return null;
+        return new SprinterDetalhadoResponse(sprinter);
     }
 }

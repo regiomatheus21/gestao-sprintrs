@@ -2,10 +2,11 @@ package br.com.gestaosprinter.sprinter.apllication.api;
 
 import br.com.gestaosprinter.sprinter.domain.Sexo;
 import br.com.gestaosprinter.sprinter.domain.Sprinter;
+import lombok.Value;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
-
+@Value
 public class SprinterDetalhadoResponse {
     private UUID idSprinter;
     private String nome;
