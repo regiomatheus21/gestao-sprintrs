@@ -22,5 +22,8 @@ public interface SprinterApi {
     @ResponseStatus(code = HttpStatus.OK)
     SprinterDetalhadoResponse getSprinterAtravesId(@PathVariable UUID idSprinter);
 
+    @DeleteMapping(value = "/{idSprinter}")
+    @ResponseStatus(code = HttpStatus.NO_CONTENT)
+    void deleteSprintAtravesId(@PathVariable UUID idSprinter);
 
 }
