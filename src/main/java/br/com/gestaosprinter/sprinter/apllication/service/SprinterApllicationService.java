@@ -1,5 +1,6 @@
 package br.com.gestaosprinter.sprinter.apllication.service;
 
+import br.com.gestaosprinter.sprinter.apllication.api.SprinterDetalhadoResponse;
 import br.com.gestaosprinter.sprinter.apllication.api.SprinterListResponse;
 import br.com.gestaosprinter.sprinter.apllication.api.SprinterRequest;
 import br.com.gestaosprinter.sprinter.apllication.api.SprinterResponse;
@@ -10,6 +11,7 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 @Log4j2
@@ -31,5 +33,12 @@ public class SprinterApllicationService implements sprinterService{
         List <Sprinter> sprinters = sprinterRepository.buscaTodosSprinters();
         log.info("[finaliza] SprinterApllicationService - buscaTodosSprinters");
         return SprinterListResponse.converte(sprinters);
+    }
+
+    @Override
+    public SprinterDetalhadoResponse buscaSprinterAtravesId(UUID idSprinter) {
+        log.info("[inicia] SprinterApllicationService - buscaSprinterAtravesId");
+        log.info("[finaliza] SprinterApllicationService - buscaSprinterAtravesId");
+        return null;
     }
 }

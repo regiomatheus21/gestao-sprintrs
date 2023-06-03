@@ -31,11 +31,12 @@ public class SprinterController implements SprinterApi {
     }
 
     @Override
-    public List<SprinterDetalhadoResponse> getSprinterAtravesId() {
+    public SprinterDetalhadoResponse getSprinterAtravesId(UUID idSprinter) {
         log.info("[inicia] SprinterController - getSprinterAtravesId ");
+        log.info("[idSprinter {}", idSprinter);
+        SprinterDetalhadoResponse sprinterDetalhado = sprinterService.buscaSprinterAtravesId(idSprinter);
         log.info("[finaliza] SprinterController - getSprinterAtravesId ");
-
-        return null;
+        return sprinterDetalhado;
     }
 
 
