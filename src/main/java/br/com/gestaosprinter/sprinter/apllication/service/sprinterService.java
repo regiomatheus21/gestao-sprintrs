@@ -10,4 +10,6 @@ public interface sprinterService {
     List<SprinterListResponse> buscaTodosSprinters();
 
     SprinterDetalhadoResponse buscaSprinterAtravesId(UUID idSprinter);
+
+    void deletaSprinterAtravesId(UUID idSprinter);
 }

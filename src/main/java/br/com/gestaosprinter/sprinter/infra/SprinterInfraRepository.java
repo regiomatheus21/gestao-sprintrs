@@ -49,4 +49,12 @@ public class SprinterInfraRepository implements SprinterRepository {
         log.info("[finaliza-] SprinterInfraRepository - buscaSprinterAtravesId");
         return sprinter;
     }
+
+    @Override
+    public void deletaSprinter(Sprinter sprinter) {
+        log.info("[inicia] SprinterInfraRepository - deletaSprinter");
+        sprinterSpringDataJPARepository.delete(sprinter);
+        log.info("[inicia] SprinterInfraRepository - deletaSprinter");
+
+    }
 }

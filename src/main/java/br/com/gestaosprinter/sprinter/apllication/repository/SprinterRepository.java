@@ -12,4 +12,6 @@ public interface SprinterRepository {
      Sprinter salva(Sprinter sprinter);
 
      Sprinter buscaSprinterAtravesId(UUID idSprinter);
+
+     void deletaSprinter(Sprinter sprinter);
 }
