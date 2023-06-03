@@ -17,5 +17,9 @@ public interface SprinterApi {
     @ResponseStatus(code = HttpStatus.OK)
     List<SprinterListResponse> getTodosSprinter();
 
+    @GetMapping(value = "/{idSprinter}")
+    @ResponseStatus(code = HttpStatus.OK)
+    List<SprinterDetalhadoResponse> getSprinterAtravesId();
+
 
 }

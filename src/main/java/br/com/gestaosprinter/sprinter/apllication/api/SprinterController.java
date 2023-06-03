@@ -30,5 +30,13 @@ public class SprinterController implements SprinterApi {
         return sprinters;
     }
 
+    @Override
+    public List<SprinterDetalhadoResponse> getSprinterAtravesId() {
+        log.info("[inicia] SprinterController - getSprinterAtravesId ");
+        log.info("[finaliza] SprinterController - getSprinterAtravesId ");
+
+        return null;
+    }
+
 
 }
