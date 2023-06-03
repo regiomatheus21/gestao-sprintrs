@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.gestaosprinter.sprinter.apllication.service.sprinterService;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @Log4j2
@@ -24,7 +25,10 @@ public class SprinterController implements SprinterApi {
     @Override
     public List<SprinterListResponse> getTodosSprinter() {
         log.info("[inicia] SprinterController - getTodosSprinter ");
+        List<SprinterListResponse> sprinters = sprinterService.buscaTodosSprinters();
         log.info("[finaliza] SprinterController - getTodosSprinter ");
-        return null;
+        return sprinters;
     }
+
+
 }

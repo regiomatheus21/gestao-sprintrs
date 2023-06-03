@@ -27,7 +27,7 @@ public class SprinterListResponse {
         this.idSprinter=sprinter.getIdSprinter();
         this.nome = sprinter.getNome();
         this.cpf = sprinter.getCpf();
-        this.email = getEmail();
-        this.celular = getCelular();
+        this.email = sprinter.getEmail();
+        this.celular = sprinter.getCelular();
     }
 }
