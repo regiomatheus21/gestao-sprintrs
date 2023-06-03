@@ -47,5 +47,12 @@ public class SprinterController implements SprinterApi {
         log.info("[finaliza] SprinterController - deleteSprintAtravesId ");
     }
 
+    @Override
+    public void editaDadosSprinter(UUID idSprinter, SprinterAlteracaoRequest sprinterAlteracaoRequest) {
+        log.info("[inicia] SprinterController - editaDadosSprinter ");
+        log.info("[idSprinter {}", idSprinter);
+        log.info("[finaliza] SprinterController - editaDadosSprinter ");
+    }
+
 
 }

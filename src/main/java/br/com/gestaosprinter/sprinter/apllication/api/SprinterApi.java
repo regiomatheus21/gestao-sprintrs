@@ -25,5 +25,9 @@ public interface SprinterApi {
     @DeleteMapping(value = "/{idSprinter}")
     @ResponseStatus(code = HttpStatus.NO_CONTENT)
     void deleteSprintAtravesId(@PathVariable UUID idSprinter);
+    @PatchMapping(value = "/{idSprinter}")
+    @ResponseStatus(code = HttpStatus.NO_CONTENT)
+    void editaDadosSprinter(@PathVariable UUID idSprinter,
+                            @Valid @RequestBody SprinterAlteracaoRequest sprinterAlteracaoRequest);
 
 }
