@@ -12,4 +12,6 @@ public interface sprinterService {
     SprinterDetalhadoResponse buscaSprinterAtravesId(UUID idSprinter);
 
     void deletaSprinterAtravesId(UUID idSprinter);
+
+    void editaDadosSprinter(UUID idSprinter, SprinterAlteracaoRequest sprinterAlteracaoRequest);
 }

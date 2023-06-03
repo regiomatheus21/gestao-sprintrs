@@ -6,6 +6,7 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.web.bind.annotation.RestController;
 import br.com.gestaosprinter.sprinter.apllication.service.sprinterService;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.UUID;
 
@@ -48,9 +49,10 @@ public class SprinterController implements SprinterApi {
     }
 
     @Override
-    public void editaDadosSprinter(UUID idSprinter, SprinterAlteracaoRequest sprinterAlteracaoRequest) {
+    public void editaDadosSprinter(UUID idSprinter,@Valid SprinterAlteracaoRequest sprinterAlteracaoRequest) {
         log.info("[inicia] SprinterController - editaDadosSprinter ");
         log.info("[idSprinter {}", idSprinter);
+        sprinterService.editaDadosSprinter(idSprinter,sprinterAlteracaoRequest);
         log.info("[finaliza] SprinterController - editaDadosSprinter ");
     }
 

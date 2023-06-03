@@ -1,9 +1,6 @@
 package br.com.gestaosprinter.sprinter.apllication.service;
 
-import br.com.gestaosprinter.sprinter.apllication.api.SprinterDetalhadoResponse;
-import br.com.gestaosprinter.sprinter.apllication.api.SprinterListResponse;
-import br.com.gestaosprinter.sprinter.apllication.api.SprinterRequest;
-import br.com.gestaosprinter.sprinter.apllication.api.SprinterResponse;
+import br.com.gestaosprinter.sprinter.apllication.api.*;
 import br.com.gestaosprinter.sprinter.apllication.repository.SprinterRepository;
 import br.com.gestaosprinter.sprinter.domain.Sprinter;
 import lombok.RequiredArgsConstructor;
@@ -49,5 +46,16 @@ public class SprinterApllicationService implements sprinterService{
         Sprinter sprinter = sprinterRepository.buscaSprinterAtravesId(idSprinter);
         sprinterRepository.deletaSprinter(sprinter);
         log.info("[finaliza] SprinterApllicationService - deletaSprinterAtravesId");
+    }
+
+    @Override
+    public void editaDadosSprinter(UUID idSprinter, SprinterAlteracaoRequest sprinterAlteracaoRequest) {
+        log.info("[inicia] SprinterApllicationService - editaDadosSprinter");
+        Sprinter sprinter = sprinterRepository.buscaSprinterAtravesId(idSprinter);
+        sprinter.altera(sprinterAlteracaoRequest);
+        sprinterRepository.salva(sprinter);
+        log.info("[finaliza] SprinterApllicationService - editaDadosSprinter");
+
+
     }
 }
