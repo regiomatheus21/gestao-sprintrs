@@ -1,5 +1,6 @@
 package br.com.gestaosprinter.sprinter.domain;
 
+import br.com.gestaosprinter.sprinter.apllication.api.SprinterAlteracaoRequest;
 import br.com.gestaosprinter.sprinter.apllication.api.SprinterRequest;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -51,5 +52,15 @@ public class Sprinter {
         this.dataNascimento= sprinterRequest.getDataNascimento();
         this.aceitaTermos = sprinterRequest.isAceitaTermos();
         this.dataHoraDoCadastro = LocalDateTime.now();
+    }
+
+    public void altera(SprinterAlteracaoRequest sprinterAlteracaoRequest) {
+        this.nome = sprinterAlteracaoRequest.getNome();
+        this.celular= sprinterAlteracaoRequest.getCelular();
+        this.sexo = sprinterAlteracaoRequest.getSexo();
+        this.dataNascimento = sprinterAlteracaoRequest.getDataNascimento();
+        this.aceitaTermos = sprinterAlteracaoRequest.getAceitaTermos();
+        this.dataHoraDaUltimaAlteracao = LocalDateTime.now();
+        this.cpf = sprinterAlteracaoRequest.getCpf();
     }
 }
